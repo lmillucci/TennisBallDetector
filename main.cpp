@@ -1,6 +1,6 @@
 /* 
  * File:   main.cpp
- * Author: Lorenzo Millucci
+ * Author: Lorenzo-Millucci
  *
  * Created on 14 ottobre 2013, 10.29
  */
