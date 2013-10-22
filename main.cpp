@@ -32,8 +32,10 @@ int main(int argc, char *argv[]) {
   CvCapture *capture = 0; //The camera
   IplImage* frame = 0; //The images you bring out of the camera
 
-  //Open the camera
-  //capture = cvCaptureFromCAM( 0 );
+  if(argv[0]=="-c"){
+	  //Open the camera
+	  capture = cvCaptureFromCAM( 0 );
+	}
   //open a local video
   capture=cvCreateFileCapture("/home/pi/palline14.mp4");
   if (!capture ) {
