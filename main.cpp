@@ -32,14 +32,15 @@ int main(int argc, char *argv[]) {
   CvCapture *capture = 0; //The camera
   IplImage* frame = 0; //The images you bring out of the camera
 
-  if(argv[0]=="-c"){
+  if(argc>1){
 	  //Open the camera
 	  capture = cvCaptureFromCAM( 0 );
+	}else{
+	  printf("open a local video \n");
+	  capture=cvCreateFileCapture("/home/pi/palline14.mp4");
 	}
-  //open a local video
-  capture=cvCreateFileCapture("/home/pi/palline14.mp4");
   if (!capture ) {
-    printf("Could not connect to camera\n" );
+    printf("Unable to found source\n" );
     return 1;
   }
 
