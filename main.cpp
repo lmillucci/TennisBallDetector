@@ -29,12 +29,18 @@ const int MATCHES_THRESH = 3;
 const int HUE_BINS = 32;
 
 int main(int argc, char *argv[]) {
+
+	int videoWidth;
+	int videoHeight;
+
   CvCapture *capture = 0; //The camera
   IplImage* frame = 0; //The images you bring out of the camera
 
   if(argc>1){
 	  //Open the camera
 	  capture = cvCaptureFromCAM( 0 );
+	  videoWidth=argv[0];
+	  videoHeight=argv[1];
 	}else{
 	  printf("open a local video \n");
 	  capture=cvCreateFileCapture("/home/pi/palline14.mp4");
